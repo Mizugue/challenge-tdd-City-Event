@@ -9,4 +9,5 @@ public interface CityService {
 
     List<CityDTO> findAll(Sort sort);
     CityDTO save(CityDTO cityDTO);
+    void delete(Long id);
 }

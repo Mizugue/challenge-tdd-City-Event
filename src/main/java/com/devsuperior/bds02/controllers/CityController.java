@@ -30,6 +30,12 @@ public class CityController {
         return new ResponseEntity<>(cityService.save(cityDTO), HttpStatus.CREATED);
     }
 
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<?> delete(@PathVariable Long id){
+        cityService.delete(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
 
 
 }
