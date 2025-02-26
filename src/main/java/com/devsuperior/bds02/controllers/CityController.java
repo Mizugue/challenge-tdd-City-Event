@@ -9,9 +9,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,6 +23,11 @@ public class CityController {
     @GetMapping
     public ResponseEntity<List<CityDTO>> findAll(){
         return new ResponseEntity<>(cityService.findAll(Sort.by("name")), HttpStatus.OK);
+    }
+
+    @PostMapping
+    public ResponseEntity<CityDTO> save(@RequestBody CityDTO cityDTO){
+        return new ResponseEntity<>(cityService.save(cityDTO), HttpStatus.CREATED);
     }
 
 

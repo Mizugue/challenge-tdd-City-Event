@@ -1,6 +1,7 @@
 package com.devsuperior.bds02.services;
 
 import com.devsuperior.bds02.dto.CityDTO;
+import com.devsuperior.bds02.entities.City;
 import com.devsuperior.bds02.repositories.CityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -23,5 +24,14 @@ public class CityServiceImpl implements CityService{
     @Transactional(readOnly = true)
     public List<CityDTO> findAll(Sort sort) {
         return cityRepository.findAll(sort).stream().map(CityDTO::new).collect(Collectors.toList());
+    }
+
+    @Override
+    @Transactional
+    public CityDTO save(CityDTO cityDTO) {
+        City cityToSave = new City(cityDTO.getId(), cityDTO.getName());
+        City citySaved = cityRepository.save(cityToSave);
+        cityDTO.setId(citySaved.getId());
+        return cityDTO;
     }
 }
