@@ -1,25 +1,17 @@
 # 🏙️ City Event - Desafio TDD
 
-Este repositório contém a implementação de um backend para gerenciamento de eventos em cidades, desenvolvido com foco em **Test-Driven Development (TDD)**.
+Este repositório contém uma aplicação backend desenvolvida com **Spring Boot** e foco em **Test-Driven Development (TDD)**. O sistema gerencia eventos associados a cidades.
 
 ## 📦 Tecnologias
 
-- Java 17+
-- Spring Boot
+- Java 11
+- Spring Boot 2.4.5
+- Spring Data JPA
+- Spring Web
+- H2 Database
+- JUnit 5 (testes de integração)
 - Maven
-- JUnit 5
-- H2 (banco de dados em memória)
-
-🛠️ Endpoints principais
-
-A API permite:
-
-    Cadastro, atualização e remoção de eventos
-
-    Busca de eventos por nome, local ou faixa de preço
-
-    Filtragem por datas
-
-    Associação com usuários e controle de acesso
 
 
+🧪 Executando os testes
+Este projeto possui testes de integração para os controladores (CityControllerIT.java e EventControllerIT.java):
