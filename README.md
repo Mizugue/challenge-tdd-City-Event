@@ -22,4 +22,4 @@ A API permite:
 
     Associação com usuários e controle de acesso
 
-    Detalhes completos estão na coleção do Postman incluída no repositório.
+
